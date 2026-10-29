@@ -392,6 +392,10 @@ th {
   line-height: 1.5;
 }
 @media (max-width: 760px) {
-  .sorbet-cover--image { min-height: 0; }
-  .sorbet-visual { margin: 1.5rem 0 2rem; }
+  .sorbet-cover--image {
+    min-height: 0;
+  }
+  .sorbet-visual {
+    margin: 1.5rem 0 2rem;
+  }
 }
