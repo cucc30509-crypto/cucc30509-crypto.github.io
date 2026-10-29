@@ -1,34 +1,31 @@
 ---
-layout: about
-title: about
+layout: default
+title: "Home"
+description: "Sorbet — on-page SEO audits and content optimization. Clear, practical recommendations for your next webpage."
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
-
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+nav: false
+nav_order: 1
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<link rel="stylesheet" href="{{ "/assets/css/sorbet.css" | relative_url }}">
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+<div class="sorbet-home">
+<section class="sorbet-hero">
+<p class="sorbet-eyebrow">Sorbet / Independent SEO freelancer</p>
+<h1>SEO work that is clear, practical, and ready to implement.</h1>
+<div class="sorbet-hero-bottom"><p><strong>On-Page SEO &amp; Content Optimization</strong><br>I analyze existing webpages, identify on-page SEO and content opportunities, and turn the findings into publish-ready recommendations.</p><div class="sorbet-actions"><a class="sorbet-button" href="{{ '/work/' | relative_url }}">View Work <span aria-hidden="true">→</span></a><a href="{{ '/services/' | relative_url }}">Services</a><a href="{{ '/contact/' | relative_url }}">Contact</a></div></div>
+</section>
+<section class="sorbet-section"><div class="sorbet-section-heading"><p class="sorbet-eyebrow">Selected work / 01—03</p><h2>From a page problem<br>to a practical next step.</h2></div>
+<p>Three independent portfolio studies. Speculative recommendations, not commissioned client work or measured results.</p>
+<div class="sorbet-work-grid">
+{% assign studies = site.projects | sort: "importance" %}
+{% for study in studies %}
+<a class="sorbet-work-card tone-{{ study.importance }}" href="{{ study.url | relative_url }}">
+  <div class="sorbet-cover"><span class="sorbet-number">0{{ study.importance }}</span><span class="sorbet-cover-label">{{ study.cover_label }}</span></div>
+  <div class="sorbet-card-copy"><span class="sorbet-eyebrow">{{ study.project_type }}</span><h3>{{ study.title }}</h3><p>{{ study.description }}</p><span class="sorbet-text-link">Explore the study <span aria-hidden="true">→</span></span></div>
+</a>
+{% endfor %}
+</div>
+</section>
+<section class="sorbet-close"><p class="sorbet-eyebrow">A focused place to begin</p><h2>One page. A clearer direction.</h2><p>Introductory offer: $20 USD for one existing webpage up to approximately 1,500 words.</p><a class="sorbet-button" href="{{ '/contact/' | relative_url }}">Start with one webpage <span aria-hidden="true">→</span></a></section>
+</div>

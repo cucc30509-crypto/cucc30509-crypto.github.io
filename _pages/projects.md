@@ -1,65 +1,23 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: "Work"
+description: "Three independent SEO portfolio studies: a local service audit, a content rewrite, and a CRM content strategy."
+permalink: /work/
 nav: true
-nav_order: 3
-display_categories: [work, fun]
-horizontal: false
+nav_order: 2
 ---
 
-<!-- pages/projects.md -->
-<div class="projects">
-{% if site.enable_project_categories and page.display_categories %}
-  <!-- Display categorized projects -->
-  {% for category in page.display_categories %}
-  <a id="{{ category }}" href=".#{{ category }}">
-    <h2 class="category">{{ category }}</h2>
-  </a>
-  {% assign categorized_projects = site.projects | where: "category", category %}
-  {% assign sorted_projects = categorized_projects | sort: "importance" %}
-  <!-- Generate cards for each project -->
-  {% if page.horizontal %}
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-  {% endfor %}
+<link rel="stylesheet" href="{{ "/assets/css/sorbet.css" | relative_url }}">
 
-{% else %}
-
-<!-- Display projects without categories -->
-
-{% assign sorted_projects = site.projects | sort: "importance" %}
-
-  <!-- Generate cards for each project -->
-
-{% if page.horizontal %}
-
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2">
-    {% for project in sorted_projects %}
-      {% include projects_horizontal.liquid %}
-    {% endfor %}
-    </div>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-md-3">
-    {% for project in sorted_projects %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endif %}
+<p class="sorbet-eyebrow">The thinking behind the recommendations</p>
+<div class="sorbet-intro">A page audit. A focused rewrite. A content plan.</div>
+<p>Explore how I approach intent, structure, and useful copy. These are independent speculative studies of public websites, with no client relationship or performance results claimed.</p>
+<div class="sorbet-work-grid">
+{% assign studies = site.projects | sort: "importance" %}
+{% for study in studies %}
+<a class="sorbet-work-card tone-{{ study.importance }}" href="{{ study.url | relative_url }}">
+  <div class="sorbet-cover"><span class="sorbet-number">0{{ study.importance }}</span><span class="sorbet-cover-label">{{ study.cover_label }}</span></div>
+  <div class="sorbet-card-copy"><span class="sorbet-eyebrow">{{ study.project_type }}</span><h3>{{ study.title }}</h3><p>{{ study.description }}</p><span class="sorbet-text-link">Explore the study <span aria-hidden="true">→</span></span></div>
+</a>
+{% endfor %}
 </div>
