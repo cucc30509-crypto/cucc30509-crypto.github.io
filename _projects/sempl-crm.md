@@ -3,6 +3,8 @@ layout: page
 importance: 3
 project_type: "Keyword & Content Strategy"
 cover_label: "Topic cluster → content brief"
+cover_image: "/assets/img/portfolio/sempl-cover.svg"
+cover_alt: "Keyword and content strategy visualization for Sempl CRM"
 title: "Sempl CRM"
 description: "A practical content brief for small teams planning their first CRM rollout."
 permalink: /work/sempl-crm/
@@ -40,6 +42,11 @@ permalink: /work/sempl-crm/
 | CRM best practices       | How do we keep it useful?       | Ongoing review and data hygiene |
 
 These are related topic themes, not a ranked list of measured opportunities. Validate search results and actual audience language before prioritizing additional articles.
+
+<figure class="sorbet-visual">
+  <img src="{{ '/assets/img/portfolio/sempl-content-strategy.svg' | relative_url }}" alt="Proposed CRM keyword cluster and article architecture for Sempl CRM" width="1080" height="700" loading="lazy" decoding="async">
+  <figcaption>Proposed content strategy — topic relationships and article architecture, not proprietary keyword-tool data.</figcaption>
+</figure>
 
 ## 03 / Publish-Ready Content Brief
 

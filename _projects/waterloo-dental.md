@@ -3,6 +3,8 @@ layout: page
 importance: 2
 project_type: "Before / After Content Optimization"
 cover_label: "Brief mention → useful copy"
+cover_image: "/assets/img/portfolio/waterloo-cover.svg"
+cover_alt: "Before and after content optimization visualization for Waterloo Dental"
 title: "Waterloo Dental"
 description: "Turn a brief emergency service mention into a useful decision-making section."
 permalink: /work/waterloo-dental/
@@ -46,6 +48,11 @@ A self-contained emergency dentistry section with a clear heading, service conte
 These metadata proposals belong on a dedicated emergency page, if one is warranted. Keep broader metadata on a general services page.
 </section>
 </div>
+
+<figure class="sorbet-visual">
+  <img src="{{ '/assets/img/portfolio/waterloo-before-after.svg' | relative_url }}" alt="Illustrative before and after content optimization comparison for Waterloo Dental emergency dentistry content" width="1080" height="700" loading="lazy" decoding="async">
+  <figcaption>Illustrative Before / After: the baseline is brief-supplied; the optimized side is a proposed direction. No ranking or conversion improvement is claimed.</figcaption>
+</figure>
 
 ## 02 / Proposed Heading Structure
 

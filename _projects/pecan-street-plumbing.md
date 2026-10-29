@@ -3,6 +3,8 @@ layout: page
 importance: 1
 project_type: "On-Page SEO Audit"
 cover_label: "Intent → architecture"
+cover_image: "/assets/img/portfolio/pecan-cover.svg"
+cover_alt: "Editorial SEO audit visualization for Pecan Street Plumbing"
 title: "Pecan Street Plumbing"
 description: "A clearer route from a general service page to local emergency intent."
 permalink: /work/pecan-street-plumbing/
@@ -33,6 +35,11 @@ permalink: /work/pecan-street-plumbing/
 | High     | Can a visitor understand the next action?          | Place a clear contact CTA beside confirmed availability and service-area information.        |
 | Medium   | Is emergency guidance sufficiently useful?         | Explain problems handled, service boundaries, and how to request help.                       |
 | Medium   | Can people find the page from related services?    | Add descriptive links from the services hub and relevant repair pages.                       |
+
+<figure class="sorbet-visual">
+  <img src="{{ '/assets/img/portfolio/pecan-audit-map.svg' | relative_url }}" alt="Illustrative SEO audit map showing audit questions, opportunities, and a proposed local emergency plumbing page structure" width="1080" height="700" loading="lazy" decoding="async">
+  <figcaption>Illustrative SEO architecture / proposed direction — not a reproduction of the source website.</figcaption>
+</figure>
 
 ## 03 / SEO Opportunity
 
