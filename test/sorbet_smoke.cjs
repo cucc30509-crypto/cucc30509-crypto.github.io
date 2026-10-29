@@ -41,6 +41,26 @@ const routes = ["/", "/work/", "/services/", "/contact/", "/work/pecan-street-pl
           assert.match(await page.locator("main, [role=main]").innerText(), /No ranking, traffic, conversion, or revenue results are claimed/);
         }
         if (route === "/work/") assert.equal(await page.locator(".sorbet-work-card").count(), 3);
+        if (route === "/contact/") {
+          assert.equal(await page.locator("#discord-username").innerText(), "wanwhite.");
+          const discord = page.getByRole("link", { name: /Contact me on Discord/ });
+          assert.equal(await discord.getAttribute("href"), "https://discord.com/users/1197540352928784385");
+          assert.equal(await discord.getAttribute("target"), "_blank");
+          assert.match(await discord.getAttribute("rel"), /noopener/);
+          await page.context().grantPermissions(["clipboard-read", "clipboard-write"], { origin: base });
+          await page.getByRole("button", { name: "Copy Discord username" }).click();
+          await page.waitForFunction(() => document.getElementById("discord-copy-status").textContent === "Copied: wanwhite.");
+          assert.equal(await page.evaluate(() => navigator.clipboard.readText()), "wanwhite.");
+          await page.evaluate(() => {
+            navigator.clipboard.writeText = async () => {
+              throw new Error("Permission denied");
+            };
+          });
+          await page.getByRole("button", { name: "Copy Discord username" }).click();
+          await page.waitForFunction(() => document.getElementById("discord-copy-status").textContent.startsWith("Copy unavailable."));
+          assert.ok(await page.getByRole("button", { name: "Copy Discord username" }).isEnabled());
+          await page.screenshot({ path: `/tmp/sorbet-${width}-contact.png`, fullPage: true });
+        }
         if (width === 390) {
           await page.getByRole("button", { name: "Toggle navigation", exact: true }).click();
           assert.equal(await page.getByRole("button", { name: "Toggle navigation", exact: true }).getAttribute("aria-expanded"), "true");
@@ -51,9 +71,17 @@ const routes = ["/", "/work/", "/services/", "/contact/", "/work/pecan-street-pl
       }
       await page.close();
     }
+    const noJS = await browser.newPage({ javaScriptEnabled: false });
+    await noJS.goto(base + "/contact/");
+    assert.ok(await noJS.getByRole("link", { name: /Contact me on Discord/ }).isVisible());
+    assert.equal(await noJS.locator("#discord-username").innerText(), "wanwhite.");
+    assert.ok(await noJS.locator("#copy-discord").isHidden());
+    await noJS.close();
     for (const demo of ["blog", "publications", "cv", "books", "teaching", "repositories", "projects"])
       assert.ok(!fs.existsSync(path.join("_site", demo)), "Published demo: " + demo);
-    console.log("PASS: 8 pages at desktop/mobile widths; navigation, metadata, links, study notices, mobile menu, and demo exclusion.");
+    console.log(
+      "PASS: 8 pages at desktop/mobile widths; navigation, metadata, links, study notices, mobile menu, demo exclusion, Discord link, exact clipboard copy, and denied/no-JS fallbacks."
+    );
   } finally {
     await browser.close();
   }

@@ -9,7 +9,7 @@ No gem-owned layouts, includes, or Sass files are overridden.
 - `_pages/about.md`: Home, using the gem's default layout.
 - `_pages/projects.md`: Work index, listing the three published studies.
 - `_pages/services.md`: $20 USD introductory offer and scope.
-- `_pages/contact.md`: GitHub and original-platform contact instructions.
+- `_pages/contact.md`: Discord contact, exact username copying, and a secondary GitHub profile link.
 - `_projects/pecan-street-plumbing.md`, `waterloo-dental.md`, `sempl-crm.md`: studies.
 - `assets/css/sorbet.css`: site-specific presentation, linked by each page.
 - `assets/img/sorbet-social.png`: original typographic social preview.

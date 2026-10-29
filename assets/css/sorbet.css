@@ -319,3 +319,42 @@ th {
     transform: none;
   }
 }
+
+.sorbet-discord-username {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  user-select: all;
+}
+.sorbet-copy-control {
+  margin-top: 1rem;
+}
+.sorbet-copy-button {
+  background: transparent;
+  border: 1px solid #59615a;
+  border-radius: 3px;
+  color: #222722;
+  cursor: pointer;
+  padding: 0.6rem 0.9rem;
+  font: inherit;
+  font-size: 0.85rem;
+}
+.sorbet-copy-button:hover {
+  background: #e8ecdf;
+}
+.sorbet-copy-button:focus-visible {
+  outline: 3px solid #a43e26;
+  outline-offset: 4px;
+}
+.sorbet-copy-button:disabled {
+  cursor: wait;
+}
+.sorbet-copy-status {
+  font-size: 0.85rem;
+  min-height: 1.7em;
+  margin: 0.5rem 0 0;
+}
+.sorbet-secondary-contact {
+  font-size: 0.85rem;
+  color: #59615a;
+}
