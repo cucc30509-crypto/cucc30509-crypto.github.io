@@ -1,5 +1,6 @@
 ---
 layout: page
+portfolio_group: "seo"
 importance: 2
 project_type: "Before / After Content Optimization"
 cover_label: "Brief mention → useful copy"
