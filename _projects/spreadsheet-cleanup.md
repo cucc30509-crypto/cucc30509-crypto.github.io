@@ -24,7 +24,7 @@ permalink: /work/spreadsheet-cleanup/
 Small inconsistencies create large headaches: duplicate contacts, mixed date formats, missing sources, inconsistent capitalization, and status labels that mean the same thing in different ways.
 
 <figure class="sorbet-visual">
-  <img src="{{ '/assets/img/portfolio/spreadsheet-cleanup-cover.svg' | relative_url }}" alt="Illustrative spreadsheet cleanup workflow showing duplicates, standardized fields, and quality checks" width="1080" height="700" loading="lazy" decoding="async">
+  <img src="{{ '/assets/img/portfolio/spreadsheet-cleanup-cover.svg' | relative_url }}?v=8f8eb86" alt="Illustrative spreadsheet cleanup workflow showing duplicates, standardized fields, and quality checks" width="1080" height="700" loading="lazy" decoding="async">
   <figcaption>Illustrative cleanup view using fictional records — designed to show the workflow, not a real client dataset.</figcaption>
 </figure>
 
