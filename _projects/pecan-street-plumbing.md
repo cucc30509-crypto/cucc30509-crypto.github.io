@@ -1,5 +1,6 @@
 ---
 layout: page
+portfolio_group: "seo"
 importance: 1
 project_type: "On-Page SEO Audit"
 cover_label: "Intent → architecture"
