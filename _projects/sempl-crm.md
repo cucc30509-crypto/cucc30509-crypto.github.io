@@ -1,5 +1,6 @@
 ---
 layout: page
+portfolio_group: "seo"
 importance: 3
 project_type: "Keyword & Content Strategy"
 cover_label: "Topic cluster → content brief"
